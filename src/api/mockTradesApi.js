@@ -6,7 +6,7 @@ const trades = [
     id: '1123456',
     isin: 'DE1234567890',
     product: 'DAX',
-    price: 12.88,
+    price: 12,
     datetime: '2012-08-08 11:45:58'
   },
   {
@@ -20,14 +20,14 @@ const trades = [
     id: '1123458',
     isin: 'DE1234567890',
     product: 'DAX',
-    price: 15,
+    price: 18,
     datetime: '2012-08-09 13:45:58'
   },
   {
     id: '54234656',
     isin: 'DE1234567890',
     product: 'DAX',
-    price: 11,
+    price: 10,
     datetime: '2012-08-10 13:00:58'
   }
 ];
