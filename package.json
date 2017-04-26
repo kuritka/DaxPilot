@@ -1,7 +1,7 @@
 {
-  "name": "ps-redux",
+  "name": "dax-pilot",
   "version": "1.0.0",
-  "description": "Starter kit for React and Redux Pluralsight course by Cory House",
+  "description": "Web application testing REST interface ",
   "scripts": {
     "prestart": "babel-node tools/startMessage.js",
     "start": "npm-run-all --parallel test:watch open:src lint:watch",
@@ -41,6 +41,7 @@
     "babel-preset-react": "6.5.0",
     "babel-preset-react-hmre": "1.1.1",
     "babel-register": "6.8.0",
+    "cheerio": "^0.22.0",
     "colors": "1.1.2",
     "compression": "^1.6.1",
     "cross-env": "1.0.7",
@@ -73,6 +74,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/coryhouse/pluralsight-redux-starter"
+    "url": "https://github.com/kuritka/DaxPilot"
   }
 }

@@ -10,7 +10,7 @@ import {loadCourses} from './actions/courseActions';
 import {loadAuthors} from './actions/authorActions';
 import {loadTradesAsync} from './actions/tradeActions';
 import './styles/styles.css'; //Webpack can import CSS files too!
-import './styles/mic.styles.css'
+import './styles/mic.styles.css';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import '../node_modules/toastr/build/toastr.min.css';
 
