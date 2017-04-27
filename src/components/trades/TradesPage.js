@@ -32,9 +32,9 @@ class TradesPage extends React.Component {
       <div>
         <h1>Trades - chart test</h1>
         <p>Some text inside</p>
-         {trades.map(trade =>
+         {/*{trades.map(trade =>
              <p key={trade.id} >{trade.datetime}<span width="2em"/>{trade.price}</p>
-          )}
+          )}*/}
 
           <LineChart width={400} height={300} data={trades}>
               <Line type="monotone" dataKey="price" stroke="#EF1818" />
