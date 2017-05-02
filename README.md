@@ -9,6 +9,7 @@ TODO LIST
     https://css-tricks.com/gallery/milwaukee-ballet/
     https://nordkapp.fi/
     http://codepen.io/caraujo/pen/RWRbXQ
+    http://fontawesome.io/
 
 3. main page - animation,  navigation, fonts
 

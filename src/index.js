@@ -9,7 +9,6 @@ import routes from './routes';
 import {loadCourses} from './actions/courseActions';
 import {loadAuthors} from './actions/authorActions';
 import {loadTradesAsync} from './actions/tradeActions';
-import './img/SuitManFilled.jpg';
 import './styles/styles.css'; //Webpack can import CSS files too!
 import './styles/mic.styles.css';
 import './styles/home.styles.css';
