@@ -4,12 +4,23 @@ import Header from './common/Header';
 import {connect} from 'react-redux';
 
 class App extends React.Component {
+
+ constructor(props, context) {
+     super(props, context);
+     this.getHeaderMenu = this.getHeaderMenu.bind(this);
+  }
+
+  getHeaderMenu() {
+    if( this.props.location.pathname != "/")
+    {
+      return <Header loading={this.props.loading} />;
+    }
+  } 
+
   render() {
     return (
       <div className="container-fluid">
-        <Header
-          loading={this.props.loading}
-        />
+        {this.getHeaderMenu()}
         {this.props.children}
       </div>
     );
@@ -18,7 +29,8 @@ class App extends React.Component {
 
 App.propTypes = {
   children: PropTypes.object.isRequired,
-  loading: PropTypes.bool.isRequired
+  loading: PropTypes.bool.isRequired, 
+  location: PropTypes.object.isRequired
 };
 
 function mapStateToProps(state, ownProps) {

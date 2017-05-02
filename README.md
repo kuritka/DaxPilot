@@ -8,6 +8,7 @@ TODO LIST
     https://www.youtube.com/watch?v=0euuuw27CgA
     https://css-tricks.com/gallery/milwaukee-ballet/
     https://nordkapp.fi/
+    http://codepen.io/caraujo/pen/RWRbXQ
 
 3. main page - animation,  navigation, fonts
 

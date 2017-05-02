@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css?family=Baloo+Bhaina|Bungee|Michroma|Share+Tech+Mono|Six+Caps|Syncopate');
+
+
+#home
+{
+   height: 100%;
+   font-family: 'Baloo Bhaina', cursive;
+   position: absolute;
+   display:block;
+   top: 0px;
+   left: 0px;
+   right: 0px;
+   bottom: 0px;
+   overflow: hidden; 
+}
+
+#home > div{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+#home > #layer1 {
+  background-image: url("../img/dax.jpg") ;
+  mix-blend-mode: none;
+  left: 40%;
+  right: auto;
+  width: 100%;
+  animation: roll 60s linear infinite;
+}
+
+#home > #layer2 {
+  background-image: url('../img/SuitManFilled.jpg'); 
+  mix-blend-mode: lighten;
+}
+
+#home > #layer3 {
+  background-image: url('../img/SuitManTransparent.png'); 
+  mix-blend-mode: multiply;
+}
+
+@-moz-keyframes roll {
+  50% {
+    -webkit-transform: translate(-40%, 0);
+    -moz-transform: translate(-40%, 0);
+    -ms-transform: translate(-40%, 0);
+    -o-transform: translate(-40%, 0);
+    transform: translate(-40%, 0);
+  }
+  100% {
+    -webkit-transform: translate(0%, 0);
+    -moz-transform: translate(0%, 0);
+    -ms-transform: translate(0%, 0);
+    -o-transform: translate(0%, 0);
+    transform: translate(0%, 0);
+  }
+}
+@-webkit-keyframes roll {
+  50% {
+    -webkit-transform: translate(-40%, 0);
+    -moz-transform: translate(-40%, 0);
+    -ms-transform: translate(-40%, 0);
+    -o-transform: translate(-40%, 0);
+    transform: translate(-40%, 0);
+  }
+  100% {
+    -webkit-transform: translate(0%, 0);
+    -moz-transform: translate(0%, 0);
+    -ms-transform: translate(0%, 0);
+    -o-transform: translate(0%, 0);
+    transform: translate(0%, 0);
+  }
+}
+@keyframes roll {
+  50% {
+    -webkit-transform: translate(-40%, 0);
+    -moz-transform: translate(-40%, 0);
+    -ms-transform: translate(-40%, 0);
+    -o-transform: translate(-40%, 0);
+    transform: translate(-40%, 0);
+  }
+  100% {
+    -webkit-transform: translate(0%, 0);
+    -moz-transform: translate(0%, 0);
+    -ms-transform: translate(0%, 0);
+    -o-transform: translate(0%, 0);
+    transform: translate(0%, 0);
+  }
+}
+
+
+  /*font-family: 'Syncopate', sans-serif;
+   font-family: 'Bungee', cursive;
+   font-family: 'Share Tech Mono', monospace;
+   font-family: 'Six Caps', sans-serif;
+   font-family: 'Michroma', sans-serif;*/
+/*
+    TEXT
+*/
+
+#home > h1 {
+    font-family: 'Syncopate', sans-serif;
+    text-transform: capitalize;
+    font-weight: bold;
+    font-size: 7em;
+    z-index: 50;
+    position: relative;
+    color: white;
+    margin-left: 1em;
+    margin-top: .4em;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    -webkit-animation: fadeInFromNone 0.6s ease-out;
+    -moz-animation: fadeInFromNone 0.6s ease-out;
+    -o-animation: fadeInFromNone 0.6s ease-out;
+    animation: fadeInFromNone 0.6s ease-out;
+
+}
+
+
+#home > h2 {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 4em;
+    z-index: 99;
+    position: relative;
+    top: 0em;
+    left: 1.9em;
+    color: white;
+    opacity:0;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    -webkit-animation: fadeInFromNone 1.2s .8s 1 ease-out;
+    -moz-animation: fadeInFromNone 1.2s .8s 1 ease-out;
+    -o-animation: fadeInFromNone 1.2s .8s 1 ease-out;
+    animation: fadeInFromNone 1.2s .8s 1 ease-out;
+    
+    -webkit-animation-fill-mode: forwards;
+    -moz-animation-fill-mode: forwards;
+    -o-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes fadeInFromNone {
+    0% {
+        display: none;
+        opacity: 0;
+    }
+
+    1% {
+        display: block;
+        opacity: 0;
+    }
+
+    100% {
+        display: block;
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes fadeInFromNone {
+    0% {
+        display: none;
+        opacity: 0;
+    }
+
+    1% {
+        display: block;
+        opacity: 0;
+    }
+
+    100% {
+        display: block;
+        opacity: 1;
+    }
+}
+
+@-o-keyframes fadeInFromNone {
+    0% {
+        display: none;
+        opacity: 0;
+    }
+
+    1% {
+        display: block;
+        opacity: 0;
+    }
+
+    100% {
+        display: block;
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInFromNone {
+    0% {
+        display: none;
+        opacity: 0;
+    }
+
+    1% {
+        display: block;
+        opacity: 0;
+    }
+
+    100% {
+        display: block;
+        opacity: 1;
+    }
+}
+
+
+
+
+
+
+
+
+
+
