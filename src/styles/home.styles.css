@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Baloo+Bhaina|Bungee|Michroma|Share+Tech+Mono|Six+Caps|Syncopate');
+@import url('https://fonts.googleapis.com/css?family=Baloo+Bhaina|Bungee|Share+Tech+Mono|Russo+One');
 @import url('http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css');
 
 #home
@@ -94,19 +94,17 @@
 }
 
 
-  /*font-family: 'Syncopate', sans-serif;
+  /*
    font-family: 'Bungee', cursive;
    font-family: 'Share Tech Mono', monospace;
-   font-family: 'Six Caps', sans-serif;
-   font-family: 'Michroma', sans-serif;*/
 /*
     TEXT
 */
 
 #home > h1 {
-    font-family: 'Syncopate', sans-serif;
+    font-family: 'Russo One', sans-serif;
     text-transform: capitalize;
-    font-weight: bold;
+    word-wrap: break-word;
     font-size: 7em;
     z-index: 50;
     position: relative;
@@ -118,7 +116,7 @@
     -moz-animation: fadeInFromNone 0.6s ease-out;
     -o-animation: fadeInFromNone 0.6s ease-out;
     animation: fadeInFromNone 0.6s ease-out;
-
+    
 }
 
 
@@ -127,6 +125,7 @@
     font-size: 4em;
     z-index: 99;
     position: relative;
+    word-wrap: break-word;
     top: 0em;
     left: 1.9em;
     color: white;
@@ -219,9 +218,21 @@ Menu control
 
 #home > nav {
     position: relative;
-    top: 2em;
-    left: 7em;
+    left: 3.8em;
     z-index: 50;
+
+
+    opacity: 0;
+    -webkit-animation: fadeInFromNone 1.2s .8s 1 ease-out;
+    -moz-animation: fadeInFromNone 1.2s .8s 1 ease-out;
+    -o-animation: fadeInFromNone 1.2s .8s 1 ease-out;
+    animation: fadeInFromNone 1.2s .8s 1 ease-out;
+    
+    -webkit-animation-fill-mode: forwards;
+    -moz-animation-fill-mode: forwards;
+    -o-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+
 }
 .menu {
   -webkit-filter: url("#shadowed-goo");
@@ -299,12 +310,12 @@ Menu control
   position: absolute;
   left: 50%;
   margin-left: -80px;
-  padding-top: 20px;
+  padding-top: 30px;
   padding-left: 80px;
   width: 650px;
   height: 150px;
   box-sizing: border-box;
-  font-size: 20px;
+  font-size: 40px;
   text-align: left;
 }
 
@@ -384,6 +395,69 @@ Menu control
 }
 
 
+/*
+IPHONE7 750 x 1334
+*/
+
+@media screen and (max-width: 751px) {
+  #home > h1 {
+    font-size: 7em;
+    color: white;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    min-width:4.8em;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: .5em;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  }
+
+  #home > h2 { 
+    font-size: 3em;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    width:8em;
+    margin-top: 4em;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  #home > nav {
+    left: 4.2em;
+    position:relative;
+    top: 9em;
+    transform: translateX(-40px);
+    left: 25%;
+  }
+}
 
 
 
+/*
+IPHONE 5 640 x 1136
+*/
+/*
+@media screen and (max-width: 641px) {
+  #home > h1 {
+    font-size: 7em;
+    color: white;
+    margin-left: .75em;
+    margin-top: .5em;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  }
+
+  #home > h2 {
+    font-size: 3em;
+    position: relative;
+    left: 3em;
+  }
+
+  #home > nav {
+    left: 3em;
+    position:relative;
+    top: 2em;
+  }
+}
+*/
