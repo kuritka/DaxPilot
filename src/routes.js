@@ -5,6 +5,7 @@ import HomePage from './components/home/HomePage';
 import AboutPage from './components/about/AboutPage';
 import CoursesPage from './components/course/CoursesPage';
 import TradesPage from './components/trades/TradesPage';
+import ISINPage from './components/isin/ISINPage';
 import ManageCoursePage from './components/course/ManageCoursePage'; //eslint-disable-line import/no-named-as-default
 
 export default (
@@ -13,6 +14,7 @@ export default (
     <Route path="courses" component={CoursesPage} />
     <Route path="course" component={ManageCoursePage} />
     <Route path="course/:id" component={ManageCoursePage} />
+    <Route path="isins" component={ISINPage} />
     <Route path="trades" component={TradesPage} />
     <Route path="about" component={AboutPage} />
   </Route>
