@@ -1,34 +1,54 @@
 import React from 'react';
 import TextInput from '../common/TextInput';
+import {bindActionCreators} from 'redux';
+import {connect} from 'react-redux';
+import * as isinActions from '../../actions/isinActions';
 
 
-const SearchISINForm = ({isin, onSearch, onChange, searching, errors}) => {
-    return(
-        <form>
-            <h2>ISIN : </h2>
-            <TextInput
-                name="isin"
-                label="ISIN"
-                value={isin.Id}
-                onChange={onChange}
-                error={errors.title}/>
-            <input
-                type="submit"
-                disabled={searching}
-                value={searching ? 'Searching...' : 'Search'}
-                className="btn btn-primary"
-                onClick={onSearch}/>
-        </form>
-    );    
-};
+class SearchISINForm extends React.Component {
+    
+   constructor(props, context) {
+        super(props, context);
+    } 
+
+    render() {
+        return(
+            <form>
+                <h2>ISIN : </h2>
+                <TextInput
+                    name="isin"
+                    label="ISIN code"
+                    onChange={this.props.search} 
+                    placeholder="DE1234567890" 
+                     />
+                <input
+                    type="submit"
+                  //  disabled={searching}
+                  //  value={searching ? 'Searching...' : 'Search'}
+                    className="btn btn-primary"
+                    onClick={this.onSearchISIN}/>
+            </form>
+        );    
+    }
+}
 
 
 SearchISINForm.propTypes = {
-  isin: React.PropTypes.object.isRequired,
-  onSearch: React.PropTypes.func.isRequired,
-  onChange: React.PropTypes.func.isRequired,
-  searching: React.PropTypes.bool,
-  errors: React.PropTypes.object
+   search: React.PropTypes.func.isRequired
+//   onChangeISIN: React.PropTypes.func.isRequired
 };
 
-export default SearchISINForm;
+
+function mapStateToProps(state, ownProps) {
+  return {
+    isins: state.isins
+  };
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    actions: bindActionCreators(isinActions, dispatch)
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(SearchISINForm);

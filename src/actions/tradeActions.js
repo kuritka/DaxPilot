@@ -13,8 +13,8 @@ export function loadTradesSuccess(trades) {
 export function loadTradesAsync() {
   return function(dispatch) {
     dispatch(beginAjaxCall());
-    return tradesApi.getAllTrades().then(courses => {
-      dispatch(loadTradesSuccess(courses));
+    return tradesApi.getAllTrades().then(trades => {
+      dispatch(loadTradesSuccess(trades));
     }).catch(error => {
       throw(error);
     });
