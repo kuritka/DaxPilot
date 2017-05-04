@@ -10,18 +10,14 @@ class ISINPage extends React.Component {
 
   constructor(props, context) {
     super(props, context);
-    this.search = this.search.bind(this);
+    this.search = this.search.bind(this);    
   } 
 
 
   search(event){
     event.preventDefault();
     let query = event.target.value;
-    isinActions.loadISINsAsync('DE55');//.then(() => console.log('jupiii'));
-      // .catch(error => {
-      //   toastr.error(error);
-      //   this.setState({saving: false});
-      // });
+    isinActions.searchISINs(query);    
   }
 
 
@@ -33,7 +29,7 @@ class ISINPage extends React.Component {
         <SearchISINForm search={this.search}  />
         
         {isins.map(isin =>
-             <p key={isin.id} >{isin.product}<span width="2em"/>{isin.id}&nbsp;{isin.product}</p>
+             <p key={isin.id} >{isin.id}&nbsp;{isin.product}</p>
           )}
       </div>
     );

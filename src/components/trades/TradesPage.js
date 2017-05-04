@@ -10,10 +10,8 @@ class TradesPage extends React.Component {
 
   constructor(props, context) {
     super(props, context);
-    tradesActions.loadTradesAsync();
+    tradesActions.getAllTradesAsync();
   }
-
- 
 
   render() {
     const {trades} = this.props;
@@ -24,14 +22,12 @@ class TradesPage extends React.Component {
          {/*{trades.map(trade =>
              <p key={trade.id} >{trade.datetime}<span width="2em"/>{trade.price}</p>
           )}*/}
-
           <LineChart width={400} height={300} data={trades}>
               <Line type="monotone" dataKey="price" stroke="#EF1818" />
                <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
                <XAxis dataKey="datetime" />
                <YAxis />
           </LineChart>
-
         <p>...</p>
       </div>
     );

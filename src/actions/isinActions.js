@@ -1,28 +1,21 @@
 import * as types from './actionTypes';
-import isinApi from '../api/mockISINApi';
-import {beginAjaxCall, ajaxCallError} from './ajaxStatusActions';
 import axios from 'axios';
+import store from './../store';
 
 
-export function loadISINSuccess(trades) {
-  return { type: types.LOAD_ISINS_SUCCESS, trades};
+export function loadISINSuccess(isins) {
+  return { type: types.LOAD_ISINS_SUCCESS, isins};
 }
 
-
-
-//ASYNC part
-export function loadISINsAsync(startWith) {
-  return function(dispatch) {
-    dispatch(beginAjaxCall());
-    return isinApi.getAllWhereISINStartsWith(startWith).then(isins => {
-      dispatch(loadISINSuccess(isins));
-    }).catch(error => {
-      throw(error);
-    });
-  };
+export function searchISINs(startWith) {
+    if(startWith && startWith.length > 2  ){
+      axios.get('http://localhost:3004/isins?q='+startWith)
+        .then(response => { 
+          store.dispatch(loadISINSuccess(response.data));
+        });
+    }
+    else
+    {
+      store.dispatch(loadISINSuccess([]));
+    }
 }
-
-
-// export function searchISINs(startWith) {
-//   return axios.get('')
-// }

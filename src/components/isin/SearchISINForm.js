@@ -19,14 +19,7 @@ class SearchISINForm extends React.Component {
                     name="isin"
                     label="ISIN code"
                     onChange={this.props.search} 
-                    placeholder="DE1234567890" 
-                     />
-                <input
-                    type="submit"
-                  //  disabled={searching}
-                  //  value={searching ? 'Searching...' : 'Search'}
-                    className="btn btn-primary"
-                    onClick={this.onSearchISIN}/>
+                    placeholder="DE1234567890" />
             </form>
         );    
     }
@@ -35,7 +28,6 @@ class SearchISINForm extends React.Component {
 
 SearchISINForm.propTypes = {
    search: React.PropTypes.func.isRequired
-//   onChangeISIN: React.PropTypes.func.isRequired
 };
 
 

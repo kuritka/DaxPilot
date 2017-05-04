@@ -13,12 +13,9 @@ import './styles/styles.css'; //Webpack can import CSS files too!
 import './styles/home.styles.css';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import '../node_modules/toastr/build/toastr.min.css';
+import store from './store';
 
 
-const store = configureStore();
-store.dispatch(loadCourses());
-store.dispatch(loadAuthors());
-store.dispatch(loadTradesAsync());
 
 render(
   <Provider store={store}>

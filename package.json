@@ -4,10 +4,11 @@
   "description": "Web application testing REST interface ",
   "scripts": {
     "prestart": "babel-node tools/startMessage.js",
-    "start": "npm-run-all --parallel test:watch open:src lint:watch",
+    "start": "npm-run-all --parallel test:watch open:src lint:watch json-server:watch",
     "open:src": "babel-node tools/srcServer.js",
     "lint": "node_modules/.bin/esw webpack.config.* src tools",
     "lint:watch": "npm run lint -- --watch",
+    "json-server:watch": "json-server --watch db.json --port 3004",
     "test": "mocha --reporter progress tools/testSetup.js src/**/*.test.js src/components/**/*.test.js",
     "test:watch": "npm run test -- --watch",
     "clean-dist": "npm run remove-dist && mkdir dist",
