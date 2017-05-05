@@ -8,13 +8,32 @@ export function loadTradesSuccess(trades) {
   return { type: types.LOAD_TRADES_SUCCESS, trades};
 }
 
+
 //ASYNC part
 export function getAllTradesAsync() {  
+      store.dispatch(beginAjaxCall());
       axios.get('http://localhost:3004/trades')
-        .then(response => { 
+        .then(response => {             
              store.dispatch(loadTradesSuccess(response.data));
         }).catch(error => { throw(error);});
  }
+
+
+
+export function getTradesAsync(isin, callback) {  
+      axios.get('http://localhost:3004/trades?isin='+isin)
+        .then(response => { 
+             store.dispatch(loadTradesSuccess(response.data));
+             if(callback) callback();
+        }).catch(error => { throw(error);});
+ }
+
+
+ 
+
+
+
+
 
 
 

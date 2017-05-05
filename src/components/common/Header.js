@@ -9,8 +9,6 @@ const Header = ({loading}) => {
       {" | "}
       <Link to="/isins" activeClassName="active">Search By ISIN</Link>
       {" | "}
-      <Link to="/trades" activeClassName="active">Trades</Link>
-      {" | "}
       <Link to="/about" activeClassName="active">About</Link>
       {loading && <LoadingDots interval={100} dots={20}/>}
     </nav>

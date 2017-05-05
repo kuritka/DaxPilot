@@ -1,10 +1,10 @@
 import React, {PropTypes} from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import {browserHistory} from 'react-router';
+import {browserHistory, Link} from 'react-router';
 import SearchISINForm from './SearchISINForm';
 import * as isinActions from '../../actions/isinActions';
-
+import ISINList from './ISINList';
 
 class ISINPage extends React.Component {
 
@@ -27,10 +27,13 @@ class ISINPage extends React.Component {
       <div>
         
         <SearchISINForm search={this.search}  />
-        
-        {isins.map(isin =>
-             <p key={isin.id} >{isin.id}&nbsp;{isin.product}</p>
-          )}
+        <ISINList isins={isins} />
+
+        {/*{isins.map(isin =>
+             <p key={isin.id}>
+               <Link to={"/trades?isin="+isin.id} activeClassName="active">{isin.id}&nbsp;{isin.product}</Link>
+             </p>
+          )}*/}
       </div>
     );
   }
