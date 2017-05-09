@@ -11,8 +11,32 @@
     color: #555;
     text-transform: uppercase;
     border: solid 1px rgb(43, 53, 135);
+    border-radius: 8px;
+    outline: none;
 }
 
-.gridItem {
 
+.searchBox:focus{
+    /*background: url(http://i.stack.imgur.com/mJotv.gif) no-repeat scroll 7px 7px;
+    padding: 3px 18px 3px 4px;
+    background-position: right 5px center;
+    cursor: pointer;*/
+}
+
+
+.gridItem {
+      color: rgb(43, 53, 135);
+      text-decoration: underline;
+      font-family: 'Inconsolata', monospace;
+      text-transform: uppercase;
+      font-size: 2em;
+      margin: 0 auto 0 auto;
+}
+
+.gridItem:active {
+      color: orange;
+}
+
+.gridItem:hover {
+      color: orangered;
 }

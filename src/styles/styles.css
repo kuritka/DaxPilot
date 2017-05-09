@@ -13,4 +13,12 @@ a.active {
 
 nav {
   padding-top: 20px;
+  margin-left: 1em;
+}
+
+
+.headerNavigation{
+  cursor: pointer;
+  font-size: 100px;
+  margin-right:.5em;
 }

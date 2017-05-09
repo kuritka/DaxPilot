@@ -1,7 +1,7 @@
 import React, {PropTypes} from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import {browserHistory, Link} from 'react-router';
+import {Link} from 'react-router';
 import SearchISINForm from './SearchISINForm';
 import * as isinActions from '../../actions/isinActions';
 import ISINList from './ISINList';
@@ -25,15 +25,8 @@ class ISINPage extends React.Component {
     const {isins} = this.props;
     return (
       <div>
-        
         <SearchISINForm search={this.search}  />
         <ISINList isins={isins} />
-
-        {/*{isins.map(isin =>
-             <p key={isin.id}>
-               <Link to={"/trades?isin="+isin.id} activeClassName="active">{isin.id}&nbsp;{isin.product}</Link>
-             </p>
-          )}*/}
       </div>
     );
   }

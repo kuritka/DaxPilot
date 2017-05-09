@@ -1,16 +1,14 @@
 import React, {PropTypes} from 'react';
-import { Link, IndexLink } from 'react-router';
+import { browserHistory,Link, IndexLink } from 'react-router';
 import LoadingDots from './LoadingDots';
+
+
 
 const Header = ({loading}) => {
   return (
     <nav>
-      <IndexLink to="/" activeClassName="active">Home</IndexLink>
-      {" | "}
-      <Link to="/isins" activeClassName="active">Search By ISIN</Link>
-      {" | "}
-      <Link to="/about" activeClassName="active">About</Link>
-      {loading && <LoadingDots interval={100} dots={20}/>}
+      <i onClick={browserHistory.goBack}  className="fa fa-arrow-circle-left fa-4x headerNavigation"></i>
+      <i className="fa fa-home fa-4x headerNavigation" onClick={function() {browserHistory.push('/');}} ></i>
     </nav>
   );
 };
