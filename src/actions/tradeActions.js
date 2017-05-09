@@ -29,6 +29,18 @@ export function getTradesAsync(isin, callback) {
  }
 
 
+
+
+ export function getTradesRangeAsync(isin, from, to, callback) {  
+      axios.get('http://localhost:3004/trades?isin='+isin)
+        .then(response => { 
+             store.dispatch(loadTradesSuccess(response.data));
+             if(callback) callback();
+        }).catch(error => { throw(error);});
+ }
+
+
+
  
 
 

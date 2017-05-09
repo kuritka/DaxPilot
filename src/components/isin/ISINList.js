@@ -8,7 +8,7 @@ const ISINList = ({isins}) => {
   return (
     <div className={wrapperClass}>
       {isins.map(isin =>
-        <ISINListRow key={isin.id} isin={isin}/>
+        <ISINListRow key={isin.isin} isin={isin}/>
       )}
     </div>
   );
