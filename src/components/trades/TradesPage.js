@@ -11,15 +11,18 @@ import SliderValues from './SliderValues';
 
 class TradesPage extends React.Component {
 
-  constructor(props, context) {
+  constructor(props, context) {    
     super(props, context);    
+    this.state = {
+      loading: true,
+      from: this.timestamp('2016'),
+      to: this.timestamp('2017')
+    };
     this.GetChartIfDataExists = this.GetChartIfDataExists.bind(this);    
     this.OnChangeSlide = this.OnChangeSlide.bind(this);
-    this.timestamp = this.timestamp.bind(this);
   }
 
   componentWillMount(){   
-    this.state = {from:  this.timestamp('2016'), to: this.timestamp('2017')}; 
     tradesActions.getTradesAsync(this.props.location.query.isin, () => {this.setState({loading: false});});
   }
 
@@ -62,12 +65,12 @@ class TradesPage extends React.Component {
         <h1>{this.props.location.query.isin}</h1>        
           {this.GetChartIfDataExists(trades)}
            <Nouislider 
-                range={{min: this.state.from,  max: this.state.to }}  
+                range={{min: this.timestamp('2015'),  max: this.timestamp('2017')}}
                 step={7 * 24 * 60 * 60 * 1000} 
-                start={[ this.timestamp('2016'),  this.timestamp('2017')]}
-                onSlide={this.OnChangeSlide}
+                start={[ this.state.from,  this.state.to]}
+                onChange={this.OnChangeSlide}
             />
-            <SliderValues from={this.state.from} to={this.state.to} />
+            <SliderValues  from={this.state.from} to={this.state.to} />
       </div>
     );
   }

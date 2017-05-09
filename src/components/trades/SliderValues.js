@@ -29,8 +29,7 @@ let weekdays = [
    }
 
  function formatDate (dateAsNumber) {
-     debugger;
-     let date = new Date(Math.floor(dateAsNumber));
+    let date = new Date(Math.floor(dateAsNumber));
     return weekdays[date.getDay()] + ", " +
         date.getDate() + nth(date.getDate()) + " " +
         months[date.getMonth()] + " " +
@@ -38,14 +37,16 @@ let weekdays = [
   }
 
 
-const SliderValues = ({from}, {to}) => {
+
+
+const SliderValues = ({from, to}) => {
         return (
             <div className="flex-row flex-row--align-h-center">
                 <div className="flex-col-sm-5">
-                    <h4>{formatDate(from)}</h4>
+                    <h5>{formatDate(from)}</h5>
                 </div>
                 <div className="flex-col-sm-5">                    
-                    <h4>{formatDate(to)}</h4>
+                    <h5>{formatDate(to)}</h5>
                 </div>
             </div>
         );
