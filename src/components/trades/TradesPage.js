@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import {browserHistory} from 'react-router';
 import * as tradesActions from '../../actions/tradeActions';
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip } from 'recharts';
+import { XAxis, YAxis, CartesianGrid, Tooltip, AreaChart, Area } from 'recharts';
 import Nouislider from 'react-nouislider';
 import ReactDOM from 'react-dom';
 import SliderValues from './SliderValues';
@@ -11,6 +11,8 @@ import ContainerDimensions from 'react-container-dimensions';
 import Moment from 'moment';
 
 
+const fromTimeStamp = new Date('2016').getTime();   
+const toTimeStamp = new Date('2017').getTime();   
 
 class TradesPage extends React.Component {
 
@@ -18,27 +20,22 @@ class TradesPage extends React.Component {
     super(props, context);    
     this.state = {
       loading: true,
-      from: this.timestamp('2016'),
-      to: this.timestamp('2017')
+      from: fromTimeStamp, 
+      to: toTimeStamp 
     };
     this.GetChartIfDataExists = this.GetChartIfDataExists.bind(this);    
     this.OnChangeSlide = this.OnChangeSlide.bind(this);
   }
 
   componentWillMount(){   
-    tradesActions.getTradesAsync(this.props.location.query.isin, () => {this.setState({loading: false});});
+    let fromDate = Moment(this.state.from).format("YYYY-MM-DD");
+    let toDate = Moment(this.state.to).format("YYYY-MM-DD");  
+    tradesActions.getTradesAsync(this.props.location.query.isin, fromDate, toDate, () => {this.setState({loading: false});});
   }
 
-
-  // renderTooltip(trade) {
-  //   return (
-  //     <div>{trade}</div>
-  //   );
-  // }
-
-
+  
   GetChartIfDataExists(trades){
-    const dateFormat = (date) => { return Moment(date).format('YY-MM-DD'); };
+    const dateFormat = (date) => { return Moment(date,"YYYY-MM-DD HH:mm Z").format('YYYY-MM-DD'); };
     if(this.state.loading)
     {
       return <h3>Loading...</h3>;
@@ -49,13 +46,13 @@ class TradesPage extends React.Component {
         return ( 
           <ContainerDimensions>
               {({width}) => 
-                <LineChart width={width-50} height={350} data={trades}>
-                      <Line type="monotone" dataKey="price" stroke="#EF1818" dot={false}  />
-                      <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
-                      <XAxis dataKey="time" tickFormatter={dateFormat} />
-                      <YAxis />
-                      {/*<Tooltip content={this.renderTooltip} />*/}
-                </LineChart>        
+                <AreaChart width={width-50} height={350} data={trades} margin={{top:5, bottom: 5}}>
+                        <Area type="monotone" dataKey="price" fill="#2B3587" animationDuration={300}  stroke="#000" dot={false}  />
+                        <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
+                        <XAxis dataKey="time" tickFormatter={dateFormat} />
+                        <Tooltip/>
+                        <YAxis domain="[min, dataMax + 50]"  />
+                  </AreaChart>
               }
             </ContainerDimensions>
         );
@@ -65,25 +62,25 @@ class TradesPage extends React.Component {
       }
   }
 
-  timestamp(str){
-    return new Date(str).getTime();   
-  }
 
   OnChangeSlide(values){      
       let queryFrom = Number(values[0]);
       let queryTo = Number(values[1]);
-      this.setState({from: queryFrom, to: queryTo});
+      this.setState({from: queryFrom, to: queryTo});      
+      let fromDate = Moment(queryFrom).format("YYYY-MM-DD");
+      let toDate = Moment(queryTo).format("YYYY-MM-DD");  
+      tradesActions.getTradesAsync(this.props.location.query.isin, fromDate, toDate, () => {this.setState({loading: false});});
   }
 
 
   render() {        
     const {trades} = this.props;
     return (
-      <div>
+      <div>        
         <h1>{this.props.location.query.isin}</h1>        
           {this.GetChartIfDataExists(trades)}
            <Nouislider 
-                range={{min: this.timestamp('2015'),  max: this.timestamp('2017')}}
+                range={{min: fromTimeStamp,  max: toTimeStamp }}
                 step={7 * 24 * 60 * 60 * 1000} 
                 start={[ this.state.from,  this.state.to]}
                 onChange={this.OnChangeSlide}
