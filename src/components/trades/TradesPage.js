@@ -8,6 +8,7 @@ import Nouislider from 'react-nouislider';
 import ReactDOM from 'react-dom';
 import SliderValues from './SliderValues';
 import ContainerDimensions from 'react-container-dimensions';
+import Moment from 'moment';
 
 
 
@@ -29,6 +30,9 @@ class TradesPage extends React.Component {
   }
 
 
+  
+
+
   GetChartIfDataExists(trades){
     if(this.state.loading)
     {
@@ -36,6 +40,11 @@ class TradesPage extends React.Component {
     }
     else
     {
+
+    const dateFormat = (date) => {
+      return Moment(date).format('YY-MM-DD');
+    };
+
       if(trades.length > 0){        
         return ( 
           <ContainerDimensions>
@@ -43,7 +52,7 @@ class TradesPage extends React.Component {
                 <LineChart width={width-50} height={350} data={trades}>
                       <Line type="monotone" dataKey="price" stroke="#EF1818" />
                       <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
-                      <XAxis dataKey="time" />
+                      <XAxis dataKey="time" tickFormatter={dateFormat} />
                       <YAxis />
                 </LineChart>        
               }
@@ -66,7 +75,7 @@ class TradesPage extends React.Component {
   }
 
 
-  render() {    
+  render() {        
     const {trades} = this.props;
     return (
       <div>

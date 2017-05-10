@@ -21,9 +21,10 @@ export function getAllTradesAsync() {
 
 
 export function getTradesAsync(isin, callback) {  
-      axios.get('http://localhost:3004/trades?isin='+isin)
+      //axios.get('http://localhost:3004/trades?isin='+isin)
+      axios.get('http://35.158.86.73:3000/v0.2/trades/'+isin+'?dateTimeFrom=2016-01-01&dateTimeTo=2016-01-31&samples=25')
         .then(response => { 
-             store.dispatch(loadTradesSuccess(response.data));
+             store.dispatch(loadTradesSuccess(response.data.trades));
              if(callback) callback();
         }).catch(error => { throw(error);});
  }
@@ -32,9 +33,10 @@ export function getTradesAsync(isin, callback) {
 
 
  export function getTradesRangeAsync(isin, from, to, callback) {  
-      axios.get('http://localhost:3004/trades?isin='+isin)
+      //axios.get('http://localhost:3004/trades?isin='+isin)
+      axios.get('http://35.158.86.73:3000/v0.2/trades/'+isin+'?dateTimeFrom=2016-01-01&dateTimeTo=2016-01-31')
         .then(response => { 
-             store.dispatch(loadTradesSuccess(response.data));
+             store.dispatch(loadTradesSuccess(response.data.trades));
              if(callback) callback();
         }).catch(error => { throw(error);});
  }

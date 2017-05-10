@@ -1,7 +1,5 @@
 import React, {PropTypes} from 'react';
 
-
-
  
 let weekdays = [
 		"Sunday", "Monday", "Tuesday",
