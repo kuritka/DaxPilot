@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import {browserHistory} from 'react-router';
 import * as tradesActions from '../../actions/tradeActions';
-import { LineChart, Line, XAxis, YAxis, CartesianGrid } from 'recharts';
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip } from 'recharts';
 import Nouislider from 'react-nouislider';
 import ReactDOM from 'react-dom';
 import SliderValues from './SliderValues';
@@ -30,30 +30,31 @@ class TradesPage extends React.Component {
   }
 
 
-  
+  // renderTooltip(trade) {
+  //   return (
+  //     <div>{trade}</div>
+  //   );
+  // }
 
 
   GetChartIfDataExists(trades){
+    const dateFormat = (date) => { return Moment(date).format('YY-MM-DD'); };
     if(this.state.loading)
     {
       return <h3>Loading...</h3>;
     }
     else
-    {
-
-    const dateFormat = (date) => {
-      return Moment(date).format('YY-MM-DD');
-    };
-
+    {   
       if(trades.length > 0){        
         return ( 
           <ContainerDimensions>
               {({width}) => 
                 <LineChart width={width-50} height={350} data={trades}>
-                      <Line type="monotone" dataKey="price" stroke="#EF1818" />
+                      <Line type="monotone" dataKey="price" stroke="#EF1818" dot={false}  />
                       <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
                       <XAxis dataKey="time" tickFormatter={dateFormat} />
                       <YAxis />
+                      {/*<Tooltip content={this.renderTooltip} />*/}
                 </LineChart>        
               }
             </ContainerDimensions>
