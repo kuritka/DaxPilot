@@ -7,6 +7,8 @@ import { LineChart, Line, XAxis, YAxis, CartesianGrid } from 'recharts';
 import Nouislider from 'react-nouislider';
 import ReactDOM from 'react-dom';
 import SliderValues from './SliderValues';
+import ContainerDimensions from 'react-container-dimensions';
+
 
 
 class TradesPage extends React.Component {
@@ -34,13 +36,19 @@ class TradesPage extends React.Component {
     }
     else
     {
-      if(trades.length > 0){
-        return ( <LineChart width={400} height={300} data={trades}>
-                <Line type="monotone" dataKey="price" stroke="#EF1818" />
-                <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
-                <XAxis dataKey="time" />
-                <YAxis />
-        </LineChart>);
+      if(trades.length > 0){        
+        return ( 
+          <ContainerDimensions>
+              {({width}) => 
+                <LineChart width={width-50} height={350} data={trades}>
+                      <Line type="monotone" dataKey="price" stroke="#EF1818" />
+                      <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
+                      <XAxis dataKey="time" />
+                      <YAxis />
+                </LineChart>        
+              }
+            </ContainerDimensions>
+        );
        }
        else
          return <h3>No Data</h3>;
