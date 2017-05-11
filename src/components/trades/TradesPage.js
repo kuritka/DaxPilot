@@ -69,7 +69,7 @@ class TradesPage extends React.Component {
       this.setState({from: queryFrom, to: queryTo});      
       let fromDate = Moment(queryFrom).format("YYYY-MM-DD");
       let toDate = Moment(queryTo).format("YYYY-MM-DD");  
-      tradesActions.getTradesAsync(this.props.location.query.isin, fromDate, toDate, () => {this.setState({loading: false});});
+      tradesActions.getTradesAsync(this.props.params.isinId, fromDate, toDate, () => {this.setState({loading: false});});
   }
 
 
@@ -77,7 +77,7 @@ class TradesPage extends React.Component {
     const {trades} = this.props;
     return (
       <div>        
-        <h1>{this.props.location.query.isin}</h1>        
+        <h1>{this.props.params.isinId}</h1>        
           {this.GetChartIfDataExists(trades)}
           <div className="margin-top-2">
             <Nouislider 
