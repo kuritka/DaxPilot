@@ -27,7 +27,6 @@ class HomePage extends React.Component {
               <span className="hamburger hamburger-3"></span>
             </label>
             <a href="/isins" className="menu-item"> <i className="fa fa-bar-chart fa-3"></i> </a>
-            <a href="/courses" className="menu-item"> <i className="fa fa-line-chart fa-2"></i> </a>
             <a href="/about" className="menu-item"> <i className="fa fa-info-circle fa-3"></i> </a>
           </nav>
           <svg xmlns="http://www.w3.org/2000/svg" version="1.1">

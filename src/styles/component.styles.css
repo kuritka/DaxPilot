@@ -16,9 +16,11 @@
 }
 
 
-.searchBox:focus{
-    /*background: url(http://i.stack.imgur.com/mJotv.gif) no-repeat scroll 7px 7px;
-    padding: 3px 18px 3px 4px;
+
+.searchBox:focus{      
+      content: "hello";
+    /*//background: url(http://i.stack.imgur.com/mJotv.gif) no-repeat scroll 7px 7px;*/
+    /*padding: 3px 18px 3px 4px;
     background-position: right 5px center;
     cursor: pointer;*/
 }

@@ -30,7 +30,7 @@ class TradesPage extends React.Component {
   componentWillMount(){   
     let fromDate = Moment(this.state.from).format("YYYY-MM-DD");
     let toDate = Moment(this.state.to).format("YYYY-MM-DD");  
-    tradesActions.getTradesAsync(this.props.location.query.isin, fromDate, toDate, () => {this.setState({loading: false});});
+    tradesActions.getTradesAsync(this.props.params.isinId, fromDate, toDate, () => {this.setState({loading: false});});
   }
 
   
@@ -79,12 +79,14 @@ class TradesPage extends React.Component {
       <div>        
         <h1>{this.props.location.query.isin}</h1>        
           {this.GetChartIfDataExists(trades)}
-           <Nouislider 
-                range={{min: fromTimeStamp,  max: toTimeStamp }}
-                step={7 * 24 * 60 * 60 * 1000} 
-                start={[ this.state.from,  this.state.to]}
-                onChange={this.OnChangeSlide}
-            />
+          <div className="margin-top-2">
+            <Nouislider 
+                  range={{min: fromTimeStamp,  max: toTimeStamp }}
+                  step={7 * 24 * 60 * 60 * 1000} 
+                  start={[ this.state.from,  this.state.to]}
+                  onChange={this.OnChangeSlide}
+              />
+            </div>
             <SliderValues  from={this.state.from} to={this.state.to} />
       </div>
     );
@@ -94,7 +96,8 @@ class TradesPage extends React.Component {
 TradesPage.propTypes = {
   trades: PropTypes.array.isRequired,
   actions: PropTypes.object.isRequired,
-  location: PropTypes.object.isRequired
+  location: PropTypes.object.isRequired,
+  params: PropTypes.object.isRequired
 };
 
 function mapStateToProps(state, ownProps) {

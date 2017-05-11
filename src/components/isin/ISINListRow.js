@@ -4,7 +4,7 @@ import {Link} from 'react-router';
 const ISINListRow = ({isin}) => {
   return (
     <div className="flex-row">
-        <Link key={isin.isin} to={"/trades?isin="+isin.isin} className="gridItem"  activeClassName="gridItem">{isin.isin}</Link>
+        <Link key={isin.isin} to={"/isins/"+isin.isin} className="gridItem"  activeClassName="gridItem">{isin.isin}</Link>
     </div>
   );
 };

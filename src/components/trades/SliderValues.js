@@ -4,9 +4,12 @@ import Moment from 'moment';
 
 const SliderValues = ({from, to}) => {
         return (
-            <div className="flex-row flex-row--align-h-center">
+            <div className="flex-row flex-row--align-h-center margin-top-1">
                 <div className="flex-col-sm-5">
-                    <h2>{Moment(from).format('YYYY.MM.DD')} - {Moment(to).format('YYYY.MM.DD')}</h2>
+                    <h1 className="content-center">From : {Moment(from).format('YYYY.MM.DD')}</h1>
+                </div>
+                <div className="flex-col-sm-5">    
+                    <h1 className="content-center">To : {Moment(to).format('YYYY.MM.DD')}</h1>
                 </div>
             </div>
         );
