@@ -1,8 +1,18 @@
 import React, {PropTypes} from 'react';
+import BrowserDetection from 'react-browser-detection';
+
+
+const browserHandler = {
+        edge: () => <div></div>,
+        default: () =><button className="close-icon" type="reset"></button>
+      };
 
 const SearchInput = ({name,  onChange, placeholder, value}) => {
 
     let wrapperClass = 'flex-row flex-row--align-v-center searchBoxWrapper';
+
+    
+
 
     return (
     <div className={wrapperClass}>
@@ -15,8 +25,7 @@ const SearchInput = ({name,  onChange, placeholder, value}) => {
           value={value}
           onChange={onChange}
           autoComplete="off" />
-          <button className="close-icon" type="reset"></button>
-          
+          <BrowserDetection>{browserHandler}</BrowserDetection>          
     </div>
     );
 };

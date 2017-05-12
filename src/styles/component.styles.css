@@ -27,30 +27,34 @@
 }
 
 .close-icon {
-	border:1px solid transparent;
+	border:1px transparent;
 	background-color: transparent;
 	display: inline-block;
 	vertical-align: middle;
       outline: 0;
-      cursor: pointer;
       position:relative;
+      width: 1em;
+      height: 1em;
+      right: 1em;
+      cursor: pointer;
+      content: "\f00d";
+	font-family: FontAwesome;
+      font-size: 5em;
+
 }
 .close-icon:after {
 	content: "\f00d";
 	font-family: FontAwesome;
-	display: block;
+	cursor: pointer;
+      display: block;
 	position: absolute;
 	z-index:1;
-	right: .21em;
-	top: -.55em;
+	right: .2em;
+	top: -.05em;
 	margin: auto;
 	padding: 2px;
-	border-radius: 50%;
 	text-align: center;
 	color: #ddd;
-	font-weight: normal;
-      font-size: 5em;
-	cursor: pointer;
 }
 .searchBox:not(:valid) ~ .close-icon {
 	display: none;
