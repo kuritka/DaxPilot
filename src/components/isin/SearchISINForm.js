@@ -18,7 +18,7 @@ class SearchISINForm extends React.Component {
                     name="isin"
                     label="ISIN code"
                     onChange={this.props.search} 
-                    placeholder="search ISIN" />
+                    placeholder="search ISIN" />            
             </form>
         );    
     }

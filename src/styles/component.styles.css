@@ -1,10 +1,15 @@
 @import url('https://fonts.googleapis.com/css?family=Inconsolata|Roboto+Mono');
+@import url('http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css');
+
+
+.searchBoxWrapper{
+      margin: 3.5em auto 1em auto;
+}
 
 .searchBox {
     min-width: 80%;
-    margin: .5em auto 1em auto;
+    /*margin: .5em auto 1em auto;*/
     padding: .2em .4em .2em .4em;
-    /*font-family: 'Roboto Mono', monospace;*/
     font-family: 'Inconsolata', monospace;
     font-size: 3em;
     font-weight: 300;
@@ -16,13 +21,39 @@
 }
 
 
+.searchBox:focus {
+   box-shadow: 0 0 15px 5px #b0e0ee;
+   border: 2px solid #bebede;
+}
 
-.searchBox:focus{      
-      content: "hello";
-    /*//background: url(http://i.stack.imgur.com/mJotv.gif) no-repeat scroll 7px 7px;*/
-    /*padding: 3px 18px 3px 4px;
-    background-position: right 5px center;
-    cursor: pointer;*/
+.close-icon {
+	border:1px solid transparent;
+	background-color: transparent;
+	display: inline-block;
+	vertical-align: middle;
+      outline: 0;
+      cursor: pointer;
+      position:relative;
+}
+.close-icon:after {
+	content: "\f00d";
+	font-family: FontAwesome;
+	display: block;
+	position: absolute;
+	z-index:1;
+	right: .21em;
+	top: -.55em;
+	margin: auto;
+	padding: 2px;
+	border-radius: 50%;
+	text-align: center;
+	color: #ddd;
+	font-weight: normal;
+      font-size: 5em;
+	cursor: pointer;
+}
+.searchBox:not(:valid) ~ .close-icon {
+	display: none;
 }
 
 
