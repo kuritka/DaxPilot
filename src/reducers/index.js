@@ -1,10 +1,10 @@
 import {combineReducers} from 'redux';
-import isins from './isinReducer';
+import isinObject from './isinReducer';
 import trades from './tradesReducer';
 import ajaxCallsInProgress from './ajaxStatusReducer';
 
 const rootReducer = combineReducers({
-  isins,
+  isinObject,
   trades,
   ajaxCallsInProgress
 });

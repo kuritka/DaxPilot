@@ -5,6 +5,7 @@ import {Link} from 'react-router';
 import SearchISINForm from './SearchISINForm';
 import * as isinActions from '../../actions/isinActions';
 import ISINList from './ISINList';
+import ISINTotalCount from './ISINTotalCount';
 
 class ISINPage extends React.Component {
 
@@ -27,6 +28,7 @@ class ISINPage extends React.Component {
       <div>
         <SearchISINForm search={this.search}  />
         <ISINList isins={isins} />
+        <ISINTotalCount isinsCount={isins.length} totalCount={this.props.totalCount}  />        
       </div>
     );
   }
@@ -34,12 +36,14 @@ class ISINPage extends React.Component {
 
 ISINPage.propTypes = {
   isins: PropTypes.array.isRequired,
-  actions: PropTypes.object.isRequired
+  actions: PropTypes.object.isRequired,
+  totalCount: PropTypes.number.isRequired
 };
 
-function mapStateToProps(state, ownProps) {
-  return {
-    isins: state.isins
+function mapStateToProps(state, ownProps) {  
+  return {    
+    isins: state.isinObject.isins,
+    totalCount: state.isinObject.totalCount
   };
 }
 

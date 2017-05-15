@@ -1,11 +1,7 @@
 import React, {PropTypes} from 'react';
 import BrowserDetection from 'react-browser-detection';
+import BrowserHandler from './SearchInput.BrowserHandler';
 
-
-const browserHandler = {
-        edge: () => <div></div>,
-        default: () =><button className="close-icon" type="reset"></button>
-      };
 
 const SearchInput = ({name,  onChange, placeholder, value}) => {
 
@@ -25,7 +21,7 @@ const SearchInput = ({name,  onChange, placeholder, value}) => {
           value={value}
           onChange={onChange}
           autoComplete="off" />
-          <BrowserDetection>{browserHandler}</BrowserDetection>          
+          <BrowserDetection>{BrowserHandler}</BrowserDetection>          
     </div>
     );
 };

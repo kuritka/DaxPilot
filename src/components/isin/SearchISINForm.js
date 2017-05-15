@@ -32,7 +32,7 @@ SearchISINForm.propTypes = {
 
 function mapStateToProps(state, ownProps) {
   return {
-    isins: state.isins
+    isins: state.isinObject.isins
   };
 }
 

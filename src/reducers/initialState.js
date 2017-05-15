@@ -2,6 +2,6 @@ export default {
   authors: [],
   courses: [],
   trades: [],
-  isins: [],
+  isinObject:  {isins: [], totalCount: 0 },
   ajaxCallsInProgress: 0
 };
