@@ -13,12 +13,12 @@ class SearchISINForm extends React.Component {
 
     render() {
         return(
-            <form>
+            <form>                
                 <SearchInput
                     name="isin"
                     label="ISIN code"
                     onChange={this.props.search} 
-                    placeholder="search ISIN" />            
+                    placeholder="Search" />            
             </form>
         );    
     }

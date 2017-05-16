@@ -25,7 +25,7 @@
 }
 
 #home > #layer1 {
-  background-image: url("../img/dax.jpg") ;
+  background-image: url("../img/dax.jpg");
   mix-blend-mode: none;
   left: 40%;
   right: auto;

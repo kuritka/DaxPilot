@@ -1,24 +1,164 @@
+@import url('http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css');
+
 /* Styles */
-#app {
-  font: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  color: #4d4d4d;
-  min-width: 550px;
-  max-width: 850px;
-  margin: 0 auto;
-}
-
-a.active {
-  color: orange;
-}
-
-nav {
-  padding-top: 20px;
-  margin-left: 1em;
+* { 
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing:  border-box;
 }
 
 
-.headerNavigation{
+html, body {
+  padding: 0;
+  margin: 0;
+}
+
+
+/*
+
+  SearchBox
+
+*/
+
+
+.searchIcon::after{
+  content: "\f002";
+  font-family: FontAwesome;
+	cursor: pointer;
+  display: block;
+	position: relative;
+  color:white;
+  width: 1em;
+  height: 1em;
+  font-size: 4em;
+	z-index:1;
+}
+
+.searchBox {   
+    min-width: 80%;
+    padding: .2em .4em .2em .4em;
+    font-family: 'Inconsolata', monospace;
+    font-size: 5em;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #eee;
+    background-color: transparent;
+    border: inherit;
+    outline: none;
+    position:relative;
+    z-index: 1;
+}
+
+
+.searchBox:focus {
+   /*box-shadow: 0 0 15px 5px #b0e0ee;*/
+   text-transform: uppercase;
+   text-decoration: underline;
+}
+
+.searchBox:invalid {
+   border: none;
+}
+
+
+.search-isin-block{
+  height: 40vh;
+  background-image: url("../img/dax.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.close-icon {
+	border:1px transparent;
+	background-color: transparent;
+	display: inline-block;
+	vertical-align: middle;
+  outline: 0;
+  position:relative;
+  width: 1em;
+  height: 1em;
+  right: 1em;
   cursor: pointer;
-  font-size: 100px;
-  margin-right:.5em;
+  content: "\f00d";
+	font-family: FontAwesome;
+  font-size: 5em;
+}
+
+.close-icon:after {
+	content: "\f00d";
+	font-family: FontAwesome;
+	cursor: pointer;
+  display: block;
+	position: absolute;
+	z-index:1;
+	right: .2em;
+	top: -.05em;
+	margin: auto;
+	padding: 2px;
+	text-align: center;
+	color: #ddd;
+}
+.searchBox:not(:valid) ~ .close-icon {
+	display: none;
+}
+
+
+
+
+/*
+
+  helpers
+
+*/
+.row{
+  display:inline-block;
+  position:absolute;
+   margin-top: 1.5em;
+    margin-left: 5%;
+}
+
+
+.full-width {
+    display: block;
+    width: 100%;
+}
+
+.center-h{
+  display: flex;
+  justify-content: center;
+}
+
+.center-v{
+  display: flex;
+  align-content: center;
+}
+
+.center-h-v{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+
+.left-h-top-v{
+  display: flex;
+  justify-content: flex-start;
+  align-content: flex-start;
+}
+
+
+.overlay {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.4);
+}
+
+.overlay-gradient {
+  background-color: rgba(0,0,0,0.6);
+  background: linear-gradient(to top, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.7) 100%);
+  position: relative;
+  width: 100%;
+  height: 100%;
 }

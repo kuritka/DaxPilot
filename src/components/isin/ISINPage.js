@@ -26,9 +26,17 @@ class ISINPage extends React.Component {
     const {isins} = this.props;
     return (
       <div>
-        <SearchISINForm search={this.search}  />
-        <ISINList isins={isins} />
-        <ISINTotalCount isinsCount={isins.length} totalCount={this.props.totalCount}  />        
+        <div className="search-isin-block">
+          <div className="overlay-gradient">
+            <div className="row">
+              <div className="left-h-top-v">
+                  <SearchISINForm search={this.search}  />
+              </div>
+            </div>
+          </div>
+        </div>
+         <ISINList isins={isins} />
+         <ISINTotalCount isinsCount={isins.length} totalCount={this.props.totalCount}  />        
       </div>
     );
   }

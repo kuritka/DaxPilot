@@ -5,13 +5,14 @@ import BrowserHandler from './SearchInput.BrowserHandler';
 
 const SearchInput = ({name,  onChange, placeholder, value}) => {
 
-    let wrapperClass = 'flex-row flex-row--align-v-center searchBoxWrapper';
+    let wrapperClass = 'row';
 
     
 
 
     return (
     <div className={wrapperClass}>
+        <div className="searchIcon"></div>
         <input
           type="text"
           name={name}
