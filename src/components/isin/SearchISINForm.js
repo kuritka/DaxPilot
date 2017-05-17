@@ -15,7 +15,7 @@ class SearchISINForm extends React.Component {
         return(
             <form>                
                 <SearchInput
-                    name="isin"
+                    name="isin"                    
                     label="ISIN code"
                     onChange={this.props.search} 
                     placeholder="Search" />            
