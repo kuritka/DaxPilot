@@ -9,8 +9,6 @@ import routes from './routes';
 import '../node_modules/toastr/build/toastr.min.css';
 import './styles/styles.css'; //Webpack can import CSS files too!
 import './styles/home.styles.css';
-// import './styles/layout.styles.css';
-// import './styles/component.styles.css';
 import store from './store';
 import './styles/slider.css';
 

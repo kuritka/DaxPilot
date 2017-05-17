@@ -1,4 +1,6 @@
 @import url('http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
 
 /* Styles */
 * { 
@@ -181,6 +183,35 @@ input[type="checkbox"]#search:checked ~  .slow-overlay form > .searchForm > .clo
 }
 
 
+
+.isin-box{
+  columns: 2;
+  -webkit-columns: 2;
+  -moz-columns: 2;
+  list-style-type: none;
+  padding-left: 15%;
+}
+
+
+.isin-each{
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.6em;
+  text-decoration: none;
+  margin: 0.2em auto 0.2em auto;
+  color: #777;
+  -webkit-transition: all 0.2s linear 0.1s;
+  transition: all 0.2s linear 0.1s;  
+}
+
+.isin-each:active {
+    color: rgb(43, 53, 135);
+}
+
+.isin-each:hover {
+    -webkit-transition: all 0.2s linear 0.1s;
+    transition: all 0.2s linear 0.1s;  
+    color: #444;
+}
 
 
 /*

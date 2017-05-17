@@ -8,6 +8,7 @@ const Header = ({loading}) => {
   return (
     <nav>
       <i onClick={browserHistory.goBack}  className="fa fa-arrow-circle-left fa-4x headerNavigation"></i>
+      <span style={{width: '.5em'}}></span>
       <i className="fa fa-home fa-4x headerNavigation" onClick={function() {browserHistory.push('/');}} ></i>
     </nav>
   );
