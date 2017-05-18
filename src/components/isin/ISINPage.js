@@ -41,7 +41,7 @@ class ISINPage extends React.Component {
           
           <ISINList isins={isins} />
           
-          <ISINTotalCount isinsCount={isins.length} totalCount={this.props.totalCount} visible={this.props.totalCount > 0 } />        
+          <ISINTotalCount isinsCount={isins.length} totalCount={this.props.totalCount} visible={this.props.totalCount > 0} />        
 
       </div>
     );
