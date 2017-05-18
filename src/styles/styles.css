@@ -15,6 +15,92 @@ html, body {
   margin: 0;
 }
 
+/*
+  
+  footer / navigation
+
+*/
+
+/*#region Navigation*/
+nav {
+  position: flex;
+  left:0;
+  right:0;
+  justify-content: flex-end;
+  height: 12vh;  
+  display: inline-block;
+}
+
+nav > i {
+  margin: .3em;
+  float: left;
+}
+
+.header-free-text {
+  float: right;
+  font-family: 'Inconsolata', monospace;
+  font-size: 4em;
+  font-weight: 600;
+  margin-right: 1.5em;  
+}
+
+
+.header-menu-navigation{
+  cursor: pointer;
+}
+
+
+
+@media only screen and (max-width: 599px){ 
+  .header-free-text {
+    font-size: 2em;
+    margin-top: 1em;  
+  }
+  .header-menu-navigation{
+    margin-left: .5em;  
+    margin-right: .5em;  
+    font-size: 4em;
+  }
+}
+
+@media only screen and (min-width: 600px){ 
+  .header-free-text {
+    font-size: 3em;
+    margin-top: .6em;  
+  }
+  .header-menu-navigation{
+    font-size: 6em;
+    margin-top: 0.1em;
+  }
+}
+
+@media only screen and (min-width: 700px){ 
+  .header-free-text {
+    font-size: 3.5em;
+    margin-top: .5em;  
+  }
+  .header-menu-navigation{
+    margin-top: 0.1em;
+    margin-left: 1em;  
+    margin-right: 1em;  
+    font-size: 5em;
+  }
+}
+
+@media only screen and (min-width: 900px){ 
+  .header-free-text {
+    font-size: 4em;
+    margin-top: .3em;  
+  }
+  .header-menu-navigation{
+    margin-top: 0.3em;
+    font-size: 4em;
+  }
+}
+
+
+
+/*#endregion*/
 
 /*
 
@@ -22,11 +108,36 @@ html, body {
 
 */
 
+/* #region Search Icon */
+@media only screen and (max-width: 599px){ 
+   .searchIcon{  
+    margin-top: .3em;
+    margin-right: .5em;
+    font-size: 3em;
+  }
+}
+
+
+@media only screen and (min-width: 600px){ 
+   .searchIcon{  
+    margin-top: .3em;
+    margin-right: .7em;
+    font-size: 4em;
+  }
+}
+
+
+@media only screen and (min-width: 900px){ 
+  .searchIcon{  
+    margin-top: .5em;
+    margin-right: 1em;
+    font-size: 5em;
+  }
+}
+
 .searchIcon{
 	cursor: pointer;
   color: #bbb;
-  margin-top: .5em;
-  margin-right: 1em;
   -webkit-transition: all 0.5s ease-in-out 0.1s;
   transition: all 0.5s ease-in-out 0.1s;
   position: relative;
@@ -55,7 +166,6 @@ input[type="checkbox"]#search:checked ~  .slow-overlay  {
 }
 
 input[type="checkbox"]#search:checked ~  .slow-overlay form > .searchForm   {
-  margin-top: 25vh;
   visibility: visible;
   -webkit-transition: all 0.3s linear 0.1s;
   transition: all 0.3s linear 0.1s;  
@@ -65,6 +175,7 @@ input[type="checkbox"]#search:checked ~  .slow-overlay form > .searchForm > .clo
   visibility:  visible;
 }
 
+/* #endregion */
 
 
 .slow-overlay{
@@ -82,50 +193,27 @@ input[type="checkbox"]#search:checked ~  .slow-overlay form > .searchForm > .clo
 }
 
 
+/*#region Search Form*/
+
 .searchForm {
   top: 0vh;
   visibility: hidden;
   z-index: 2;
   -webkit-transition: all 0.3s linear 0.1s;
-  transition: all 0.3s linear 0.1s;  
+  transition: all 0.3s linear 0.1s;    
 }
 
 .searchBox {   
-    max-width: 55%;
     padding: .2em .4em .2em .4em;
     font-family: 'Inconsolata', monospace;
-    font-size: 5em;
     font-weight: 600;
     text-transform: uppercase;
     color: #eee;
     background-color: transparent;
     border: inherit;
     outline: none;
-    position:relative;   
+    position:relative;             
 }
-
-
-@media only screen and (max-width: 900px){ 
-  .searchBox {   
-    max-width: 50%;
-    font-size: 4.5em;
-  }
-}
-
-@media only screen and (max-width: 700px){ 
-  .searchBox {   
-    max-width: 45%;
-    font-size: 4.5em;
-  }
-}
-
-@media only screen and (max-width: 600px){ 
-  .searchBox {   
-    max-width: 40%;
-    font-size: 3em;
-  }
-}
-
 
 
 .searchBox:focus {
@@ -158,8 +246,7 @@ input[type="checkbox"]#search:checked ~  .slow-overlay form > .searchForm > .clo
   height: 1em;
   cursor: pointer;
   content: "\f00d";
-	font-family: FontAwesome;
-  font-size: 4em;    
+	font-family: FontAwesome; 
 }
 
 .close-icon::after {
@@ -169,8 +256,7 @@ input[type="checkbox"]#search:checked ~  .slow-overlay form > .searchForm > .clo
   display: block;
 	position: absolute;
 	z-index:1;	
-  left: 0em;
-	top: 0.45em;
+  left: 0em;	
 	padding: 2px;
 	text-align: center;
 	color: #ddd;    
@@ -183,19 +269,85 @@ input[type="checkbox"]#search:checked ~  .slow-overlay form > .searchForm > .clo
 }
 
 
+@media only screen and (min-width: 600px){   
+  .close-icon {
+    font-size: 3em;    
+  }
+  .close-icon::after {
+    top: 0.45em;
+  }
+  .searchBox {   
+    max-width: 40%;
+    font-size: 4em;
+  }
+  input[type="checkbox"]#search:checked ~  .slow-overlay form > .searchForm   {
+    margin-top: 30vh;
+  }
+}
+
+@media only screen and (min-width: 700px){ 
+  .close-icon {
+    font-size: 3.5em;    
+  }
+  .close-icon::after {
+    top: 0.45em;
+  }
+  .searchBox {   
+    max-width: 42%;
+    font-size: 4.5em;
+  }
+  input[type="checkbox"]#search:checked ~  .slow-overlay form > .searchForm   {
+    margin-top: 28vh;
+  }
+}
+
+
+@media only screen and (min-width: 900px){ 
+  .close-icon {
+    font-size: 4em;    
+  }
+  .close-icon::after {
+    top: 0.48em;
+  }
+  .searchBox {   
+    max-width: 48%;
+    font-size: 5em;
+  }
+  input[type="checkbox"]#search:checked ~  .slow-overlay form > .searchForm   {
+    margin-top: 25vh;
+  }
+}
+
+
+@media only screen and (max-width: 599px){ 
+  .searchBox {   
+    visibility: hidden;
+  }
+  input[type="checkbox"]#search:checked ~  .slow-overlay form > .searchForm   {
+    margin-top: 0vh;
+  }
+  input[type="checkbox"]#search:checked ~  .slow-overlay form > .searchForm > .close-icon::after  {
+      visibility:  hidden;
+  }
+}
+
+
+
+/*#endregion*/
+
+/*#region Isin list*/
 
 .isin-box{
   columns: 2;
   -webkit-columns: 2;
   -moz-columns: 2;
-  list-style-type: none;
-  padding-left: 15%;
+  list-style-type: none;  
+  min-height:34vh;
 }
 
 
 .isin-each{
   font-family: 'Open Sans', sans-serif;
-  font-size: 1.6em;
   text-decoration: none;
   margin: 0.2em auto 0.2em auto;
   color: #777;
@@ -212,6 +364,42 @@ input[type="checkbox"]#search:checked ~  .slow-overlay form > .searchForm > .clo
     transition: all 0.2s linear 0.1s;  
     color: #444;
 }
+
+
+@media only screen and (max-width: 600px){ 
+  .isin-each{
+    font-size: 5vh;
+  }
+}
+
+@media only screen and (min-width: 600px){ 
+  .isin-box{
+     padding-left: 5%;
+  }
+  .isin-each{
+    font-size: 5.5vh;
+  }
+}
+
+@media only screen and (min-width: 700px){ 
+  .isin-box{
+     padding-left: 10%;
+  }
+  .isin-each{
+    font-size: 6vh;
+  }
+}
+
+@media only screen and (min-width: 900px){ 
+  .isin-box{
+     padding-left: 10%;
+  }
+  .isin-each{
+    font-size: 6.4vh;
+  }
+}
+
+/*#endregion*/
 
 
 /*
@@ -262,7 +450,6 @@ input[type="checkbox"]#search:checked ~  .slow-overlay form > .searchForm > .clo
   align-content: flex-start;
 }
 
-
 .overlay {
   position: relative;
   width: 100%;
@@ -271,17 +458,27 @@ input[type="checkbox"]#search:checked ~  .slow-overlay form > .searchForm > .clo
 }
 
 
+.visible{
+  visibility: visible;
+} 
+
+.hidden{
+  visibility: hidden;
+} 
 
 
 
-@media only screen and (min-width: 1200px){ 
-}
-
-@media only screen and (min-width: 900px){ 
+@media only screen and (min-width: 600px){ 
 }
 
 @media only screen and (min-width: 700px){ 
 }
 
-@media only screen and (min-width: 600px){ 
+@media only screen and (min-width: 900px){ 
 }
+
+@media only screen and (min-width: 1200px){ 
+}
+
+
+

@@ -7,9 +7,8 @@ import LoadingDots from './LoadingDots';
 const Header = ({loading}) => {
   return (
     <nav>
-      <i onClick={browserHistory.goBack}  className="fa fa-arrow-circle-left fa-4x headerNavigation"></i>
-      <span style={{width: '.5em'}}></span>
-      <i className="fa fa-home fa-4x headerNavigation" onClick={function() {browserHistory.push('/');}} ></i>
+      <i onClick={browserHistory.goBack}  className="fa fa-arrow-circle-left header-menu-navigation"></i>
+      <i className="fa fa-home header-menu-navigation" onClick={function() {browserHistory.push('/');}} ></i>
     </nav>
   );
 };

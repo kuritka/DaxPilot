@@ -43,7 +43,7 @@ export function searchISINs(startWith) {
                || (0 === RemoveCharactersFromIsin(item.isin,startWith).toUpperCase().indexOf(startWith));
           });
           let filteredDataSorted = _.sortBy(filteredData, [{"isin":"asc"}]);          
-          let topTen = _.take(filteredDataSorted,10);
+          let topTen = _.take(filteredDataSorted,8);
           store.dispatch(loadISINSuccess( {isins: topTen, totalCount: filteredDataSorted.length }));
         });
     }
