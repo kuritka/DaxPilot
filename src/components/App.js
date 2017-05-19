@@ -19,7 +19,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="flex-container">        
+      <div>        
         {this.props.children}
         {this.getHeaderMenu()}
       </div>

@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from 'react-router';
+import { browserHistory, Link} from 'react-router';
 
 
 class HomePage extends React.Component {
@@ -8,7 +8,7 @@ class HomePage extends React.Component {
     super(props, context);
   }
 
-
+  
 
   render() {
     return (
@@ -16,16 +16,18 @@ class HomePage extends React.Component {
           <div id="layer1"></div>
           <div id="layer2"></div>
           <div id="layer3"></div>
-          <div className="overlay">            
-              <div className="flex-container">
+          
+              <div>
                 <div className="flex-row flex-row--align-h-center">
                   <h1>dax pilot</h1>
                 </div>
                 <div className="flex-row flex-row--align-h-center">
                   <div><h2>Deutsche Börse</h2></div>
                 </div>
-             </div>
-          </div>
+                <div className="flex-row flex-row--align-h-center">
+                  <div className="start-here-button overlay" onClick={function() {browserHistory.push('/isins')}}>Start here</div>
+                </div>
+              </div>
          
         </div>
     );

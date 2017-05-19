@@ -1,5 +1,6 @@
 @import url('http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css');
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import url('https://fonts.googleapis.com/css?family=Roboto');
 
 
 /* Styles */
@@ -408,6 +409,43 @@ input[type="checkbox"]#search:checked ~  .slow-overlay form > .searchForm > .clo
 
 */
 
+.flex-container {
+     box-sizing: border-box;
+     margin: 0 auto;
+     padding: 0 1em;
+     margin-top: 15vh;
+ }
+ 
+ .flex-container> div {
+     display: block;
+ }
+
+@media (min-width: 540px) {
+  .flex-container {
+      max-width: 540px;
+  }
+}
+
+@media (min-width: 768px){
+  .flex-container {
+    max-width: 768px;
+  }
+}
+
+@media (min-width: 992px){
+  .flex-container {
+    max-width: 992px;
+  }
+}
+
+@media (min-width: 1200px){
+  .flex-container {
+    max-width: 1200px;
+  }
+}
+
+
+
 .flex-row{
   display: flex;
   flex-wrap: wrap;
@@ -442,8 +480,6 @@ input[type="checkbox"]#search:checked ~  .slow-overlay form > .searchForm > .clo
   align-content: center;
 }
 
-
-
 .left-h-top-v{
   display: flex;
   justify-content: flex-start;
@@ -457,7 +493,6 @@ input[type="checkbox"]#search:checked ~  .slow-overlay form > .searchForm > .clo
   background-color: rgba(0,0,0,0.4);
 }
 
-
 .visible{
   visibility: visible;
 } 
@@ -466,6 +501,40 @@ input[type="checkbox"]#search:checked ~  .slow-overlay form > .searchForm > .clo
   visibility: hidden;
 } 
 
+
+
+.start-here-button{
+  cursor: pointer;
+  border: white 1px solid;
+  border-radius: 40px;
+  opacity: 0.4;
+  color: white;  
+  width: 10em;
+  text-align: center;
+  padding: 0.2em 0 0.2em 0;
+  font-family: 'Roboto', sans-serif;
+  font-size: 3em;  
+  position:relative;
+  z-index: 10;
+}
+
+.start-here-button:hover{
+  background:  white;
+  color: rgb(43, 53, 135);
+  opacity:1;
+  -webkit-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out ;
+}
+
+/*message should be possibly shown */
+.start-here-message-box{
+    visibility: hidden;
+
+}
+
+.start-here-button:hover + .start-here-message-box{
+    visibility: visible;
+}
 
 
 @media only screen and (min-width: 600px){ 
